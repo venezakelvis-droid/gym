@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  background: #0f172a;
+  color: #fff;
+  position: relative;
+  z-index: 1000;
+}
+
+/* TOPO */
+.navbar-container {
+  min-height: 64px;
+  padding: 0 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.navbar-brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* HAMBURGUER */
+.navbar-toggle {
+  width: 34px;
+  height: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar-toggle span {
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* MENU MOBILE */
+.navbar-menu {
+  max-height: 0;
+  overflow: auto;
+  background: #020617;
+  transition: max-height 0.3s ease;
+}
+
+.navbar-menu.open {
+  max-height: 300px;
+}
+
+/* LINKS */
+.navbar-link {
+  display: block;
+  padding: 1rem;
+  color: #e5e7eb;
+  text-decoration: none;
+  border-top: 1px solid #1e293b;
+}
+
+.navbar-link:hover {
+  background: #020617;
+  color: #38bdf8;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .navbar-toggle {
+    display: none;
+  }
+
+  .navbar-menu {
+    max-height: none;
+    display: flex;
+    justify-content: flex-end;
+    background: transparent;
+  }
+
+  .navbar-link {
+    border: none;
+    padding: 0 1rem;
+  }
+}
