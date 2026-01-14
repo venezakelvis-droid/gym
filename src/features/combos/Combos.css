@@ -1,14 +1,10 @@
-
 .combos-container {
-  padding: 24px;
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 24px; 
-  justify-content: center; 
+  padding: 14px;
   background-color: #f9fafb;
   min-height: 100vh;
   box-sizing: border-box;
 }
+
 
 
 .combos-title {
@@ -19,6 +15,20 @@
   color: #111827;
   margin-bottom: 32px;
 }
+
+.combos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+  gap: 24px;
+  justify-content: center;
+}
+
+.combos-pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
 
 
 @media (max-width: 1024px) {
@@ -35,4 +45,8 @@
     gap: 16px;
     padding: 16px;
   }
+   .combos-grid {
+    gap: 16px;
+  }
 }
+

@@ -29,16 +29,19 @@ function Creatina() {
     <div className="creatina-container">
       <h1 className="creatina-title">Creatinas</h1>
 
-      {paginatedItems.map((item, index) => (
-        <Card
-          key={index}
-          title={item.title}
-          value={item.price}
-          description="Aproveite enquanto durar"
-          footerText="Atualizado há 1h"
-          imageUrl={creatina}
-        />
-      ))}
+      <div className="creatina-grid">
+
+        {paginatedItems.map((item, index) => (
+          <Card
+            key={index}
+            title={item.title}
+            value={item.price}
+            description="Aproveite enquanto durar"
+            footerText="Atualizado há 1h"
+            imageUrl={creatina}
+          />
+        ))}
+      </div>
 
       <Pagination
         currentPage={currentPage}

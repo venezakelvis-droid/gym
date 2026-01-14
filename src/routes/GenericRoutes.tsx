@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import NavBar from '../shared/navbar/NavBar'
 import Loading from '../shared/loading/Loading'
+import Footer from '../shared/footer/Footer';
 
 
 
@@ -15,6 +16,7 @@ function GenericRoutes() {
 
     const Combos = lazy(() => import('../features/combos/Combos'));
 
+    const Objectives = lazy(() => import('../features/objectives/Objectives'));
 
     return (
         <>
@@ -25,7 +27,7 @@ function GenericRoutes() {
                     { label: "CREATINA", href: "/creatinas" },
                     { label: "WHEY PROTEIN", href: "/whey" },
                     { label: "COMBOS", href: "/combos" },
-                    { label: "OBJETIVOS", href: "/combos" },
+                    { label: "OBJETIVOS", href: "/objetivos" },
                 ]}
             />
             <Suspense fallback={<Loading />}>
@@ -34,9 +36,12 @@ function GenericRoutes() {
                     <Route path='/creatinas' element={<Creatina />} />
                     <Route path='/whey' element={<Whey />} />
                     <Route path='/combos' element={<Combos />} />
+                    <Route path='/objetivos' element={<Objectives />} />
 
                 </Routes>
             </Suspense>
+            
+            <Footer/>
         </>
     )
 }

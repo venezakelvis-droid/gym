@@ -29,16 +29,18 @@ function Whey() {
     <div className="whey-container">
       <h1 className="whey-title">Whey</h1>
 
-      {paginatedItems.map((item, index) => (
-        <Card
-          key={index}
-          title={item.title}
-          value={item.price}
-          description="Aproveite enquanto durar"
-          footerText="Atualizado há 1h"
-          imageUrl={whey}
-        />
-      ))}
+      <div className="whey-grid">
+        {paginatedItems.map((item, index) => (
+          <Card
+            key={index}
+            title={item.title}
+            value={item.price}
+            description="Aproveite enquanto durar"
+            footerText="Atualizado há 1h"
+            imageUrl={whey}
+          />
+        ))}
+      </div>
 
       <Pagination
         currentPage={currentPage}

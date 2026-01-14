@@ -17,8 +17,7 @@ function Home() {
         { title: "Whey Protein Growth 300g", price: "R$ 159" },
         { title: "Whey Protein Max Titanium 1kg", price: "R$ 399" },
         { title: "Creatina Black Skulls 100g", price: "R$ 99" },
-        { title: "Creatina Black Skulls 300g", price: "R$ 129" },
-        { title: "Creatina Black Skulls 1kg", price: "R$ 599" },
+
     ];
 
     const totalPagesPromocao = Math.ceil(promocoes.length / itemsPerPage);
@@ -51,16 +50,19 @@ function Home() {
         <div className="home-container">
             <h1 className="home-title">Ofertas da Semana</h1>
 
-            {paginatedItemsPromocao.map((item, index) => (
-                <Card
-                    key={index}
-                    title={item.title}
-                    value={item.price}
-                    description="Aproveite enquanto durar"
-                    footerText="Atualizado há 1h"
-                    imageUrl={whey}
-                />
-            ))}
+            <div className="home-grid">
+
+                {paginatedItemsPromocao.map((item, index) => (
+                    <Card
+                        key={index}
+                        title={item.title}
+                        value={item.price}
+                        description="Aproveite enquanto durar"
+                        footerText="Atualizado há 1h"
+                        imageUrl={whey}
+                    />
+                ))}
+            </div>
 
             <Pagination
                 currentPage={currentPage}
@@ -70,16 +72,19 @@ function Home() {
 
             <h1 className="home-title">Mais Populares</h1>
 
-            {paginatedItemsPopulares.map((item, index) => (
-                <Card
-                    key={index}
-                    title={item.title}
-                    value={item.price}
-                    description="Aproveite enquanto durar"
-                    footerText="Atualizado há 1h"
-                    imageUrl={whey}
-                />
-            ))}
+            <div className="home-grid">
+
+                {paginatedItemsPopulares.map((item, index) => (
+                    <Card
+                        key={index}
+                        title={item.title}
+                        value={item.price}
+                        description="Aproveite enquanto durar"
+                        footerText="Atualizado há 1h"
+                        imageUrl={whey}
+                    />
+                ))}
+            </div>
 
             <Pagination
                 currentPage={currentPagePopulares}
