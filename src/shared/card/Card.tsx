@@ -33,6 +33,10 @@ function Card({
           <span>{footerText}</span>
         </div>
       )}
+
+      <div className="card-footer">
+        <button onClick={onClick}>Adicionar +</button>
+      </div>
     </div>
   );
 }

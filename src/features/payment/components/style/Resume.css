@@ -1,0 +1,46 @@
+/* CARD */
+.payment-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.payment-card h2 {
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    color: #0f172a;
+
+}
+
+/* RESUMO */
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+
+.order-item span, strong {
+    color: #64748b;
+}
+
+.order-total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
+
+.order-total span, strong {
+    color: #64748b;
+}
+
+/* RESPONSIVO */
+@media (min-width: 1024px) {
+    .payment-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

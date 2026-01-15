@@ -1,15 +1,28 @@
 import { useState } from "react";
 import type { INavBarProps } from "./interfaces/INavBarProps";
 import "./styles/NavBar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+import { useCart } from "../../providers/CartProvider ";
+
 
 function NavBar({ brand, links }: INavBarProps) {
   const [open, setOpen] = useState(false);
 
+  const navigate = useNavigate();
+
+  const { totalItems } = useCart();
+
+  const handleNavigateBrand = () => {
+    navigate("/")
+  }
+
   return (
     <header className="navbar">
       <div className="navbar-container">
-        <span className="navbar-brand">{brand}</span>
+        <span className="navbar-brand" onClick={handleNavigateBrand}>{brand}</span>
+
+
 
         <button
           className="navbar-toggle"
@@ -28,7 +41,19 @@ function NavBar({ brand, links }: INavBarProps) {
             {link.label}
           </Link>
         ))}
+
+        <Link to="/pagamento" className="navbar-cart desktop">
+          <FaShoppingCart size={24} />
+          {totalItems > 0 && <span className="cart-badge">+{totalItems}</span>}
+        </Link>
       </nav>
+
+      {totalItems > 0 && (
+        <Link to="/pagamento" className="navbar-cart mobile">
+          <FaShoppingCart size={28} />
+          <span className="cart-badge">{totalItems}</span>
+        </Link>
+      )}
     </header>
   );
 }

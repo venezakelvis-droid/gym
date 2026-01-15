@@ -18,6 +18,9 @@ function GenericRoutes() {
 
     const Objectives = lazy(() => import('../features/objectives/Objectives'));
 
+    const Payment = lazy(() => import('../features/payment/Payment'));
+
+
     return (
         <>
             <NavBar
@@ -37,11 +40,12 @@ function GenericRoutes() {
                     <Route path='/whey' element={<Whey />} />
                     <Route path='/combos' element={<Combos />} />
                     <Route path='/objetivos' element={<Objectives />} />
+                    <Route path='/pagamento' element={<Payment />} />
 
                 </Routes>
             </Suspense>
-            
-            <Footer/>
+
+            <Footer />
         </>
     )
 }

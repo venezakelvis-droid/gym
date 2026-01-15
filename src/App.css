@@ -1,8 +1,11 @@
+
+
 .app-layout {
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .app-content {
@@ -11,11 +14,28 @@
   padding: 1rem;
 }
 
-/* DESKTOP */
+
+
+@media (min-width: 768px) {
+  .app-content {
+    padding: 1.5rem;
+  }
+}
+
+
+
 @media (min-width: 1200px) {
   .app-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+  }
+}
+
+
+
+@media (min-width: 1440px) {
+  .app-content {
+    max-width: 1320px;
   }
 }

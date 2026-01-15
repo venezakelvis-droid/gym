@@ -70,6 +70,20 @@
   color: #9ca3af;
 }
 
+.card-footer button {
+    margin-top: 1rem;
+    padding: 0.9rem;
+    border-radius: 10px;
+    background: #020617;
+    color: #fff;
+    font-weight: 600; 
+    width: 100%;
+}
+
+.card-footer button:hover {
+  color: #38bdf8;
+}
+
 /* responsivo */
 @media (max-width: 768px) {
   .card {

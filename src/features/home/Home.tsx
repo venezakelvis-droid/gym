@@ -3,6 +3,7 @@ import "./Home.css"
 import whey from "../../assets/whey.jfif"
 import { useState } from "react";
 import Pagination from "../../shared/pagination/Pagination";
+import { useCart } from "../../providers/CartProvider ";
 
 const itemsPerPage = 3;
 
@@ -11,6 +12,12 @@ function Home() {
     const [currentPage, setCurrentPage] = useState(1);
     const [currentPagePopulares, setCurrentPagePopulares] = useState(1);
 
+    const { addToCart } = useCart();
+
+    const handleSubmit = () => {
+        
+        addToCart({ id: 1, name: "Whey Protein", quantity: 1, price: 499 });
+    }
 
     const promocoes = [
         { title: "Creatina Integral 100g", price: "R$ 99" },
@@ -60,6 +67,7 @@ function Home() {
                         description="Aproveite enquanto durar"
                         footerText="Atualizado há 1h"
                         imageUrl={whey}
+                        onClick={handleSubmit}
                     />
                 ))}
             </div>

@@ -1,0 +1,30 @@
+.payment-page {
+    width: 100%;
+}
+
+.payment-title {
+    margin-bottom: 2rem;
+}
+
+/* GRID */
+.payment-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+
+/* CARD */
+.payment-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* RESPONSIVO */
+@media (min-width: 1024px) {
+    .payment-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
