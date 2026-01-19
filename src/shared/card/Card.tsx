@@ -9,8 +9,22 @@ function Card({
   imageUrl,
   onClick
 }: ICardProps) {
+
+  const handleClick = () => {
+    let newValue: number = Number(value);
+
+    const cartObj = {
+      id: Math.random(),
+      name: title, 
+      price: newValue,
+      quantity:1
+    }
+
+    onClick(cartObj)
+  }
+
   return (
-    <div className="card" onClick={onClick}>
+    <div className="card" onClick={handleClick}>
       {imageUrl && (
         <div className="card-image">
           <img src={imageUrl} alt={title} />
@@ -23,7 +37,7 @@ function Card({
 
       {(value || description) && (
         <div className="card-body">
-          {value && <span className="card-value">{value}</span>}
+          {value && <span className="card-value">R${value}</span>}
           {description && <p>{description}</p>}
         </div>
       )}
@@ -35,7 +49,7 @@ function Card({
       )}
 
       <div className="card-footer">
-        <button onClick={onClick}>Adicionar +</button>
+        <button onClick={handleClick}>Adicionar +</button>
       </div>
     </div>
   );

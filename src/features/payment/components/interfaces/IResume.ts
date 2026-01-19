@@ -1,4 +1,4 @@
-export interface Resume{
+export interface IResume{
     product: string,
     quantity: string
     price: number,

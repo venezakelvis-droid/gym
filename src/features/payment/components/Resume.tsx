@@ -1,7 +1,7 @@
-import type { Resume } from "./interfaces/IResume";
+import type { IResume } from "./interfaces/IResume";
 import "./style/Resume.css"
 
-function Resume({ frete, price, product, quantity }: Resume) {
+function Resume({ frete, price, product, quantity }: IResume) {
     return (
 
         <div className="payment-card">

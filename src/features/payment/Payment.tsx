@@ -6,6 +6,7 @@ import type { PaymentMethod } from "./TypeMentMethod";
 import FormPayment from "./components/FormPayment";
 import CepRequest from "../../api/Cep";
 import Loading from "../../shared/loading/Loading";
+import PaymentCart from "../../hooks/PaymentCart";
 
 
 
@@ -70,7 +71,6 @@ function Payment() {
         
     };
 
-
     const handleSubmit = (e: React.FormEvent): void => {
         e.preventDefault();
 
@@ -81,6 +81,10 @@ function Payment() {
 
         console.log("Pagamento:", payload);
     }
+
+    const data = PaymentCart();
+
+    //console.log("Data", data)
     
     if(!!isLoading) return <Loading/>
 
@@ -91,10 +95,10 @@ function Payment() {
             <div className="payment-grid">
 
                 <Resume
-                    product="Whey Protein 900g"
+                    product={data.name}
                     frete={29.90}
-                    price={499.00}
-                    quantity="2"
+                    price={data.price}
+                    quantity={data.quantity.toString()}
 
                 />
 

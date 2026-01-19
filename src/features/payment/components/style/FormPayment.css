@@ -5,6 +5,10 @@
     gap: 1rem;
 }
 
+.payment-form input{
+    color: #ffffff;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -45,6 +49,7 @@
 .payment-method span, label, input{
     color: #64748b;
 }
+
 
 .payment-method label {
     display: flex;

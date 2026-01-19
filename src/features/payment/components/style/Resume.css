@@ -1,46 +1,100 @@
-/* CARD */
+/* ===================== */
+/* CARD                 */
+/* ===================== */
 .payment-card {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 1.5rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  width: 80%;
 }
 
 .payment-card h2 {
-    margin-bottom: 1.2rem;
-    font-size: 1.2rem;
-    color: #0f172a;
-
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0f172a;
 }
 
-/* RESUMO */
+/* ===================== */
+/* RESUMO DO PEDIDO     */
+/* ===================== */
 .order-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  width: 500px;
 }
 
-
-.order-item span, strong {
-    color: #64748b;
+.order-item span,
+.order-item strong {
+  font-size: 0.95rem;
+  color: #64748b;
+  white-space: nowrap;
+  margin-right: 140px;
 }
 
+.order-item strong {
+  font-weight: 600;
+}
+
+/* TOTAL */
 .order-total {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e5e7eb;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  font-size: 1.05rem;
+
 }
 
-.order-total span, strong {
-    color: #64748b;
+.order-total span,
+.order-total strong {
+  color: #0f172a;
+  font-weight: 600;
 }
 
-/* RESPONSIVO */
+/* ===================== */
+/* GRID DO PAYMENT      */
+/* ===================== */
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* ===================== */
+/* RESPONSIVO           */
+/* ===================== */
+
+/* Tablets */
+@media (min-width: 768px) {
+  .payment-card {
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  .payment-card h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop */
 @media (min-width: 1024px) {
-    .payment-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+  .payment-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+  .payment-card {
+    padding: 1.5rem;
+    width: 100%;
+  }
 }

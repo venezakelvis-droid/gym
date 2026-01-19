@@ -4,26 +4,28 @@ import whey from "../../assets/whey.jfif"
 import { useState } from "react";
 import Pagination from "../../shared/pagination/Pagination";
 import { useCart } from "../../providers/CartProvider ";
+import type { CartItem } from "../../providers/ICartContextProps";
 
 const itemsPerPage = 3;
 
 
 function Home() {
     const [currentPage, setCurrentPage] = useState(1);
+
     const [currentPagePopulares, setCurrentPagePopulares] = useState(1);
 
-    const { addToCart } = useCart();
+    const { addToCart, cart } = useCart();
 
-    const handleSubmit = () => {
+    const handleSubmit = (item: CartItem) => {
         
-        addToCart({ id: 1, name: "Whey Protein", quantity: 1, price: 499 });
+        addToCart({ id: item.id, name: item.name, quantity: 1, price: item.price });
     }
 
     const promocoes = [
-        { title: "Creatina Integral 100g", price: "R$ 99" },
-        { title: "Whey Protein Growth 300g", price: "R$ 159" },
-        { title: "Whey Protein Max Titanium 1kg", price: "R$ 399" },
-        { title: "Creatina Black Skulls 100g", price: "R$ 99" },
+        { title: "Creatina Integral 100g", price: 99 },
+        { title: "Whey Protein Growth 300g", price: 159 },
+        { title: "Whey Protein Max Titanium 1kg", price: 399 },
+        { title: "Creatina Black Skulls 100g", price: 99 },
 
     ];
 
@@ -90,6 +92,7 @@ function Home() {
                         description="Aproveite enquanto durar"
                         footerText="Atualizado há 1h"
                         imageUrl={whey}
+                        onClick={handleSubmit}
                     />
                 ))}
             </div>

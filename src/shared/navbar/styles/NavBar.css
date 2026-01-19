@@ -89,13 +89,17 @@
 
 /* CART */
 .navbar-cart {
-  position: relative;
-  display: flex;
-  align-items: end;
-  margin-right: 10px;
+ display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #6366f1;
+  padding: 12px;
+  border-radius: 50%;
+  z-index: 10;
   color: #fff;
-  transition: color 0.3s ease;
-}
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+} 
 
 .navbar-cart:hover {
   color: #38bdf8;

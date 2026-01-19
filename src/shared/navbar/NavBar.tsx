@@ -41,12 +41,11 @@ function NavBar({ brand, links }: INavBarProps) {
             {link.label}
           </Link>
         ))}
-
-        <Link to="/pagamento" className="navbar-cart desktop">
-          <FaShoppingCart size={24} />
+      </nav>
+      <Link to="/pagamento" className="navbar-cart desktop">
+          <FaShoppingCart size={28} />
           {totalItems > 0 && <span className="cart-badge">+{totalItems}</span>}
         </Link>
-      </nav>
 
       {totalItems > 0 && (
         <Link to="/pagamento" className="navbar-cart mobile">
